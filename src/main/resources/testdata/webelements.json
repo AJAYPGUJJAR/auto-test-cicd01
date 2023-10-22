@@ -1,0 +1,10 @@
+{
+  "loginpage": {
+    "textbox-username": "#username",
+    "textbox-userauth": "#password",
+    "button-submit": "#submit"
+  },
+  "globalsqa-dropdown": {
+    "dropdown-selectcountry": "//select"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "url": {
+    "logintest-practiceTestAutomation": "https://practicetestautomation.com/practice-test-login/",
+    "dropdowntest-globalsqa": "https://www.globalsqa.com/demo-site/select-dropdown-menu/"
+  },
+  "cred": {
+    "username": "student",
+    "userAuth": "Password123"
+  }
+}
