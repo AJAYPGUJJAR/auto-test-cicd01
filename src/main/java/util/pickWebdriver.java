@@ -12,13 +12,13 @@ public class pickWebdriver {
     SauceLabsConfig sauceLabsConfig = new SauceLabsConfig();
 
     public WebDriver getWebDriver() {
-        if (System.getProperty("user.dir").contains("jenkins")) {
-            driver = sauceLabsConfig.function();
-        } else {
+//        if (System.getProperty("user.dir").contains("jenkins")) {
+//            driver = sauceLabsConfig.function();
+//        } else {
             ChromeOptions chromeOptions = new ChromeOptions();
             System.setProperty("webdriver.chrome.silentOutput", "true");
             driver = new ChromeDriver(chromeOptions);
-        }
+//        }
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
