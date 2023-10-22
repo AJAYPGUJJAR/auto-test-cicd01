@@ -1,9 +1,11 @@
 package com.apsg.uiautomation.steps;
 
 import com.apsg.uiautomation.support.action.*;
+import com.apsg.uiautomation.support.check.*;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import util.pickWebdriver;
@@ -68,6 +70,11 @@ public class MyStepdefs {
     @When("I press {string}")
     public void iPress(String text) {
         new pressButton().function(text);
+    }
+
+    @Then("I expect that element {string} matches the text {string}")
+    public void iExpectThatElementMatchesTheText(String selector, String text) {
+        new checkEqualsText().function(selector, text);
     }
 
 }
