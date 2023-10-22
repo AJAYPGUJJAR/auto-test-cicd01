@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: sample test
 
   Scenario: test login
@@ -6,7 +7,7 @@ Feature: sample test
     When I add "properties.cred.username" to the inputfield "webelements.loginpage.textbox-username"
     When I add "properties.cred.userAuth" to the inputfield "webelements.loginpage.textbox-userauth"
     When I click on the element "webelements.loginpage.button-submit"
-    Then I expect that element "//h1" matches the text "Logged In Successfull"
+    Then I expect that element "//h1" matches the text "Logged In Successfully"
 
   Scenario: test dropdown - select by index
     Given I open url "properties.url.dropdowntest-globalsqa"
