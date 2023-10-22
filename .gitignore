@@ -18,5 +18,3 @@ buildNumber.properties
 
 #user defined
 .idea
-allure-results
-allure-reports
