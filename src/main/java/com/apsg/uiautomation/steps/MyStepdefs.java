@@ -64,4 +64,10 @@ public class MyStepdefs {
     public void iScrollToElement(String selector) {
         new scroll().function(selector);
     }
+
+    @When("I press {string}")
+    public void iPress(String text) {
+        new pressButton().function(text);
+    }
+
 }
