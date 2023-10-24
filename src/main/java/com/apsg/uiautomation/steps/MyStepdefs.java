@@ -10,6 +10,10 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import util.pickWebdriver;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class MyStepdefs {
 
     public static WebDriver driver;
@@ -75,6 +79,18 @@ public class MyStepdefs {
     @Then("I expect that element {string} matches the text {string}")
     public void iExpectThatElementMatchesTheText(String selector, String text) {
         new checkEqualsText().function(selector, text);
+    }
+
+    @Then("I check Accessibility of the UI Webpage {string}")
+    public void iCheckAccessibilityOfTheUIWebpage(String pageName) {
+        new checkA11y().checkAccessibility();
+    }
+
+    @Then("I check Accessibility of the UI Webpage {string} with {string} standards to be validated")
+    public void iCheckAccessibilityOfTheUIWebpageWithStandardsToBeValidated(String pageName, String std) {
+        std = std.toLowerCase();
+        List<String> tags = Arrays.stream(std.split("\\,")).map(String::trim).collect(Collectors.toList());
+        new checkA11y().checkAccessibility(tags);
     }
 
 }

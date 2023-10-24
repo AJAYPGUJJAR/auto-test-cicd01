@@ -26,3 +26,8 @@ Feature: sample test
     Given I open url "properties.url.dropdowntest-globalsqa"
     When I scroll to element "#footer > div > div > div > div > div"
     When I pause for 2000ms
+
+    Scenario: test accessibility
+      Given I open url "properties.url.logintest-practiceTestAutomation"
+      Then I check Accessibility of the UI Webpage "Login Page-01"
+      Then I check Accessibility of the UI Webpage "Login Page-02" with "wcag2a, wcag2aa, wcag2aaa, wcag21a, wcag21aa" standards to be validated

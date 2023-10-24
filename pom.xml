@@ -50,6 +50,11 @@
             <artifactId>allure-cucumber7-jvm</artifactId>
             <version>LATEST</version>
         </dependency>
+        <dependency>
+            <groupId>com.deque.html.axe-core</groupId>
+            <artifactId>selenium</artifactId>
+            <version>LATEST</version>
+        </dependency>
     </dependencies>
 
     <build>
