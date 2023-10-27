@@ -8,7 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import util.pickWebdriver;
+import com.apsg.uiautomation.util.pickWebdriver;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,19 +28,25 @@ public class MyStepdefs {
         driver.quit();
     }
 
-    @Given("I open url {string}")
-    public void iOpenUrl(String url) {
+    @Given("I open the url {string}")
+    public void iOpenTheUrl(String url) {
         new openWebsite().function(url);
     }
 
     @When("I click on the element {string}")
+    @When("I click on the button {string}")
     public void iClickOnTheElement(String selector) {
         new clickElement().function(selector);
     }
 
     @When("I add {string} to the inputfield {string}")
     public void iAddToTheInputfield(String text, String selector) {
-        new setInputField().function(text, selector);
+        new setInputField().addInput(text, selector);
+    }
+
+    @When("I set {string} to the inputfield {string}")
+    public void iSetToTheInputfield(String text, String selector) {
+        new setInputField().setInput(text, selector);
     }
 
     @When("I pause for {int}ms")
@@ -81,16 +87,32 @@ public class MyStepdefs {
         new checkEqualsText().function(selector, text);
     }
 
-    @Then("I check Accessibility of the UI Webpage {string}")
+    @Then("I check accessibility of UI Webpage {string}")
     public void iCheckAccessibilityOfTheUIWebpage(String pageName) {
         new checkA11y().checkAccessibility();
     }
 
-    @Then("I check Accessibility of the UI Webpage {string} with {string} standards to be validated")
+    @Then("I check accessibility of UI Webpage {string} with {string} standards to be validated")
     public void iCheckAccessibilityOfTheUIWebpageWithStandardsToBeValidated(String pageName, String std) {
         std = std.toLowerCase();
         List<String> tags = Arrays.stream(std.split("\\,")).map(String::trim).collect(Collectors.toList());
         new checkA11y().checkAccessibility(tags);
+    }
+
+    @When("I upload the file {string} at the element {string}")
+    public void iUploadTheFileAtTheElement(String fileName, String selector) {
+        new uploadFile().function(fileName, selector);
+    }
+
+    @When("I scroll and click on the element {string}")
+    @When("I scroll down and click on the element {string}")
+    public void iScrollAndClickOnTheElement(String selector) {
+        new scroll().scrollDownAndClick(selector);
+    }
+
+    @When("I scroll up and click on the element {string}")
+    public void iScrollUpAndClickOnTheElement(String selector) {
+        new scroll().scrollUpAndClick(selector);
     }
 
 }

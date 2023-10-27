@@ -1,4 +1,4 @@
-package util;
+package com.apsg.uiautomation.util;
 
 import com.apsg.uiautomation.cicd.SauceLabsConfig;
 import org.openqa.selenium.WebDriver;
